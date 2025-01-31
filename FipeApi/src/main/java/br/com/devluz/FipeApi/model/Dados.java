@@ -1,4 +1,4 @@
 package br.com.devluz.FipeApi.model;
 
-public record Dados(Integer codigo, String nome ) {
+public record Dados(String codigo, String nome ) {
 }
