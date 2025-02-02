@@ -42,18 +42,17 @@ public class Principal {
         }
 
         var json = consome.obterDados(url);
-        System.out.println(json);
 
         var listaDados = converte.obterLista(json, Dados.class);
         listaDados.stream()
                 .sorted(Comparator.comparing(Dados::codigo))
                 .forEach(System.out::println);
 
+        System.out.println("Escolha o código do modelo.");
         var opcaoModelo = scanner.nextLine();
         url = url + opcaoModelo + "/modelos/";
 
         json = consome.obterDados(url);
-        System.out.println(json);
 
         var listaModelos = converte.obterDados(json, Modelos.class);
         listaModelos.modelos().stream()
